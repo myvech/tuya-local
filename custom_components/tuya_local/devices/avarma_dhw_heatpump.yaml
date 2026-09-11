@@ -1,0 +1,74 @@
+# Avarma DHW Heat Pump
+# Tuya protocol 3.5
+# Tested with Hofman Energy branded unit
+# Based on productKey: tngxiuemnvg16rzl
+
+name: DHW Heat Pump
+
+products:
+  - id: tngxiuemnvg16rzl
+    manufacturer: Hofman Energy
+    name: DHW Heat Pump
+
+entities:
+  - entity: climate
+    name: Heat pump
+
+    dps:
+      #
+      # Power
+      #
+      - id: 1
+        type: boolean
+        name: hvac_mode
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            value: "heat"
+
+      #
+      # Target temperature
+      #
+      - id: 2
+        type: integer
+        name: temperature
+        unit: C
+        range:
+          min: 30
+          max: 70
+
+      #
+      # Current water temperature
+      #
+      - id: 3
+        type: integer
+        name: current_temperature
+        unit: C
+
+      #
+      # Operating mode
+      #
+      - id: 4
+        type: string
+        name: preset_mode
+        mapping:
+          - dps_val: auto
+            value: Auto
+
+          - dps_val: eco
+            value: eco
+
+          - dps_val: mix
+            value: boost
+
+          - dps_val: electric
+            value: Electric
+
+      #
+      # Fault code
+      #
+      - id: 21
+        type: integer
+        name: fault
+        optional: true
