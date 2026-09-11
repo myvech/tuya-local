@@ -1,7 +1,7 @@
 # Avarma DHW Heat Pump
 # Tuya protocol 3.5
 # Tested with Hofman Energy branded unit
-# Based on productKey: tngxiuemnvg16rzl
+# Tuya product_id: tngxiuemnvg16rzl
 
 name: DHW Heat Pump
 
